@@ -1,5 +1,6 @@
 const initialState = {
-    list: []
+    list: [],
+    show_chart_of: 0
 }
 
 const stationReducer = (state = initialState, action) =>{
@@ -23,6 +24,16 @@ const stationReducer = (state = initialState, action) =>{
                     : station
                 }
                 )
+            }
+        case 'SHOW_CHART':
+            return {
+                ...state,
+                show_chart_of: action.value
+            }
+        case 'HIDE_CHART':
+            return {
+                ...state,
+                show_chart_of: null
             }
         default:
             return state

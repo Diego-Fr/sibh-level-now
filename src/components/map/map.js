@@ -71,7 +71,7 @@ const MapComponent = () =>{
                 
                 //escondendo no click (temporário)
                 marker.on('click', () =>{
-                    dispatch({type: 'HIDE_STATION',value: station.id})
+                    dispatch({type: 'SHOW_CHART',value: station.id})
                 })
                 
                 // adicionando marker na lista de marcadores (necessário para controle de exibição)

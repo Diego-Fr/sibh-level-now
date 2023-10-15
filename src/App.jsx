@@ -3,6 +3,7 @@ import './App.css';
 import MapComponent from './components/map/map';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import Modal from './components/modal/modal';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
   return (
     <div className='app-container'>
       <MapComponent></MapComponent>
+      <Modal></Modal>
     </div>
   );
 }
