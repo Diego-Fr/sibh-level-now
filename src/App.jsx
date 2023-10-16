@@ -4,6 +4,7 @@ import MapComponent from './components/map/map';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import Modal from './components/modal/modal';
+import ModalStation from './pages/modal_station/modalStation';
 
 
 function App() {
@@ -23,7 +24,10 @@ function App() {
   return (
     <div className='app-container'>
       <MapComponent></MapComponent>
-      <Modal></Modal>
+      <Modal
+        body={<ModalStation></ModalStation>}
+      >
+      </Modal>
     </div>
   );
 }

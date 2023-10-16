@@ -2,7 +2,7 @@ import { useRef, useState, memo, useEffect, useCallback } from 'react'
 import './modal.scss'
 import { useDispatch, useSelector } from 'react-redux'
 
-const Modal = memo(() =>{
+const Modal = memo((props) =>{
     const [show, setShow] = useState(false)
     const modalRef = useRef(null)
     const show_chart_of = useSelector(store => store.stationReducer.show_chart_of)
@@ -31,8 +31,11 @@ const Modal = memo(() =>{
 
     return (
         <div className={"modal fade"} ref={modalRef}>
+            <div className="modal-title">
+                {props.title}
+            </div>
             <div className="modal-body">
-
+                {props.body}
             </div>
         </div>
     )
