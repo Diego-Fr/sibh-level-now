@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 
 import './map.scss'
+import stationHelper from '../../helpers/stationHelper';
 
 const MapComponent = () =>{
     const stations_list = useSelector(store=>store.stationReducer.list)
@@ -91,6 +92,14 @@ const MapComponent = () =>{
         }
 
     },[stations_list,dispatch,manageMarkers])
+
+    useEffect(_=>{
+        stationHelper.getStations().then(data=>{
+            console.log(data);
+        }).catch(e=>{
+            console.log(e);
+        })
+    },[])
 
     return (
         <div ref={mapContainer} style={{width:'100%', height:'100%'}}>
